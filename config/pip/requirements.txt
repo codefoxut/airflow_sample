@@ -1,0 +1,4 @@
+-c constraints.txt
+
+psycopg2-binary
+apache-airflow[s3,mysql,postgres,redis,celery,rabbitmq,ssh]
