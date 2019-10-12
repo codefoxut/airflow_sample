@@ -1,91 +1,127 @@
-Flask-Babel==0.12.2
-Flask-OpenID==1.2.5
-Flask-SQLAlchemy==2.3.2
-Mako==1.0.9
-MarkupSafe==1.1.1
-PyYAML==5.1
-alembic==0.9.10
-amqp==2.4.2
-apache-airflow==1.10.3
-asn1crypto==0.24.0
-babel==2.6.0
-bcrypt==3.1.6
-billiard==3.5.0.5
-boto3==1.7.84
-botocore==1.10.84
-celery==4.1.1
-certifi==2019.3.9
-cffi==1.12.3
-chardet==3.0.4
+# apache-airflow
+
+pygments==2.4.2
+unicodecsv==0.14.1
+colorlog==4.0.2
 click==7.0
-colorama==0.4.1
-configparser==3.5.3
-croniter==0.3.30
-cryptography==2.6.1
-defusedxml==0.6.0
+Werkzeug==0.16.0
+itsdangerous==1.1.0
+MarkupSafe==1.1.1
+jinja2==2.10.3          # dependencies :: MarkupSafe
+flask==1.1.1            # dependencies :: itsdangerous, Jinja2, Werkzeug, click
+flask-login==0.4.1      # dependencies :: flask
 dill==0.2.9
-docutils==0.14
-flask==1.0.2
-flask-admin==1.5.3
-flask-appbuilder==1.12.3
-flask-caching==1.3.3
-flask-login==0.4.1
-flask-swagger==0.2.13
-flask-wtf==0.14.2
-flower==0.9.3
-funcsigs==1.0.0
+six==1.12.0
+tenacity==4.12.0        # dependencies :: six
+psutil==5.6.3
+lockfile==0.12.2
+docutils==0.15.2
+python-daemon==2.1.2    # dependencies :: lockfile, docutils
+flask-caching==1.3.3    # dependencies :: flask
+tabulate==0.8.5
+json-merge-patch==0.2
+sqlalchemy==1.3.10
+Mako==1.1.0             # dependencies :: MarkupSafe
+python-editor==1.0.4
+python-dateutil==2.8.0  # dependencies :: six
+alembic==1.2.1          # dependencies :: sqlalchemy, Mako, python-editor, python-dateutil
+text-unidecode==1.2
+thrift==0.11.0          # dependencies :: six
+pytz==2019.3
+tzlocal==1.5.1          # dependencies :: pytz
+pytzdata==2019.3
+pendulum==1.4.4         # dependencies :: python-dateutil,tzlocal,pytzdata
+zope.deprecation==4.4.0 # dependencies :: setuptools
+setproctitle==1.1.10
+gunicorn==19.9.0
+PyYAML==5.1.2
+flask-swagger==0.2.13   # dependencies :: flask, PyYAML
+ordereddict==1.1
+funcsigs==1.0.0         # dependencies :: orderdict
+markdown==2.6.11        # dependencies :: setuptools
+dumb-init==1.2.2
+termcolor==1.1.0
+croniter==0.3.30        # dependencies :: python-dateutil
+cached-property==1.5.1
+colorama==0.4.1
+apispec[yaml]==1.3.3    # dependencies :: PyYAML
+Babel==2.7.0            # dependencies :: pytz
+Flask-Babel==0.12.2     # dependencies :: flask, Babel
+defusedxml==0.6.0
+python3-openid==3.1.0   # dependencies :: defusedxml
+Flask-OpenID==1.2.5     # dependencies :: flask, python3-openid
+Flask-SQLAlchemy==2.4.1 # dependencies :: SQLAlchemy, flask
+WTForms==2.2.1
+flask-wtf==0.14.2       # dependencies :: flask, WTForms
+PyJWT==1.7.1
+Flask-JWT-Extended==3.24.0  # dependencies :: Werkzeug, flask, PyJWT, six
+marshmallow==2.19.5   # (3.2.1)
+marshmallow-enum==1.5.1  # dependencies :: marshmallow
+marshmallow-sqlalchemy==0.19.0  # dependencies :: marshmallow, SQLAlchemy
+urllib3==1.25.6
+idna==2.8
+chardet==3.0.4
+certifi==2019.9.11
+requests==2.22.0        # dependencies :: idna, urllib3, chardet, certifi
+prison==0.1.0           # dependencies :: six, requests
+pyrsistent==0.15.4      # dependencies :: six
+attrs==19.2.0
+more-itertools==7.2.0
+zipp==0.6.0             # dependencies :: more-itertools
+importlib-metadata==0.23  # dependencies :: zipp
+jsonschema==3.1.1       # dependencies :: pyrsistent,attrs,six,importlib-metadata,setuptools
+flask-appbuilder==1.13.1  # dependencies ::colorama,click,apispec,Flask,Flask-Babel,Flask-login,Flask-OpenID,
+                          # Flask-SQLAlchemy,Flask-WTF,Flask-JWT-Extended,python-dateutil,marshmallow,marshmallow-enum,
+                          # marshmallow-sqlalchemy,prison,jsonschema,PyJWT
+
 future==0.16.0
+configparser==3.5.3
+numpy==1.17.2
+pandas==0.25.1          # dependencies :: pytz,numpy,python-dateutil
+lazy-object-proxy==1.4.2
+iso8601==0.1.12
+flask-admin==1.5.3      # dependencies :: flask,wtforms,
+apache-airflow==1.10.5  # dependencies :: setproctitle,zope.deprecation,flask-login,flask-appbuilder,dumb-init,
+                        # text-unidecode,flask-swagger,python-daemon,gunicorn,funcsigs,jinja2,flask-caching,psutil,
+                        # unicodecsv,alembic,future,croniter,iso8601,flask-wtf,flask,pygments,tzlocal,cached-property,
+                        # tabulate,tenacity,configparser,requests,colorlog,python-dateutil,pendulum,json-merge-patch,
+                        # markdown,dill,flask-admin,lazy-object-proxy,sqlalchemy,thrift,termcolor,pandas
+jmespath==0.9.4
+botocore==1.10.84       # dependencies :: docutils,python-dateutil,jmespath
+s3transfer==0.1.13      # dependencies :: botocore
+boto3==1.7.84           # dependencies :: jmespath,botocore,s3transfer
+mysqlclient==1.3.14
+psycopg2==2.7.7
+# psycopg2-binary==2.8.2
+redis==3.3.10
+
+pycparser==2.19
+cffi==1.12.3            # dependencies :: pycparser
+bcrypt==3.1.7           # dependencies :: six,cffi
+asn1crypto==1.1.0
+cryptography==2.7       # dependencies :: six,cffi,asn1crypto
+pynacl==1.3.0           # dependencies :: six,cffi
+paramiko==2.6.0         # dependencies :: cryptography,pynacl,bcrypt
+pysftp==0.2.9           # dependencies :: paramiko
+sshtunnel==0.1.5        # dependencies :: paramiko
+
+billiard==3.6.1.0
+vine==1.3.0
+amqp==2.5.2             # dependencies :: vine
+kombu==4.6.3            # dependencies :: ampq
+celery==4.3.0           # dependencies :: vine,kombu,billiard,pytz
+tornado==5.1.1
+flower==0.9.3           # dependencies :: celery,tornado,babel,pytz
+
+dnspython==1.16.0
+pymongo==3.9.0
+
+
+
 gitdb2==2.0.5
 gitpython==2.1.11
-gunicorn==19.9.0
-idna==2.8
-iso8601==0.1.12
-itsdangerous==1.1.0
-jinja2==2.10
-jmespath==0.9.4
-json-merge-patch==0.2
-kombu==4.5.0
 librabbitmq==2.0.0
-lockfile==0.12.2
 lxml==4.3.3
-markdown==2.6.11
-mysqlclient==1.3.14
-numpy==1.16.3
-ordereddict==1.1
-pandas==0.24.2
-paramiko==2.4.2
-pendulum==1.4.4
-psutil==5.6.1
-psycopg2==2.7.7
-psycopg2-binary==2.8.2
 pyasn1==0.4.5
-pycparser==2.19
-pygments==2.3.1
-pynacl==1.3.0
-pysftp==0.2.9
-python-daemon==2.1.2
-python-dateutil==2.8.0
-python-editor==1.0.4
-python3-openid==3.1.0
-pytz==2019.1
-pytzdata==2019.1
-redis==3.2.1
-requests==2.21.0
-s3transfer==0.1.13
-setproctitle==1.1.10
-six==1.12.0
 smmap2==2.0.5
-sqlalchemy==1.2.19
-sshtunnel==0.1.4
-tabulate==0.8.3
-tenacity==4.12.0
-text-unidecode==1.2
-thrift==0.11.0
-tornado==5.1.1
-tzlocal==1.5.1
-unicodecsv==0.14.1
-urllib3==1.24.2
-vine==1.3.0
-werkzeug==0.14.1
-wtforms==2.2.1
-zope.deprecation==4.4.0
+

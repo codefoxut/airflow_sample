@@ -3,7 +3,8 @@ LABEL maintainer="Stratos Team <stratos-dev@go-mmt.com>"
 
 ARG PYTHON_VERSION=3.7.3
 ARG PYTHON_URL=https://www.python.org/ftp/python
-
+ENV AIRFLOW_HOME=/usr/local/stratos/airproject
+ENV PATH=$PATH:/usr/local/python3.7/bin
 
 RUN \
  yum install -y epel-release && \
@@ -56,16 +57,13 @@ RUN \
  ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 
-ENV AIRFLOW_HOME=/usr/local/stratos/airproject
-ENV PATH=$PATH:/usr/local/python3.7/bin
-
 # pip isntall
 COPY config/pip/requirements.txt /etc/pip/requirements.txt
 COPY config/pip/constraints.txt /etc/pip/constraints.txt
 RUN \
   /usr/local/python3.7/bin/pip3.7 install -r /etc/pip/requirements.txt
 
-COPY . /usr/local/goibibo/stratos
+COPY . /usr/local/stratos
 
 WORKDIR ${AIRFLOW_HOME}
 
